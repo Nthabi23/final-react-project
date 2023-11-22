@@ -2,7 +2,7 @@ import Weather from "./Weather.js";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-function App() {
+ function App() {
   return(
     <div className="App">
       <Weather defaultCity="Pretoria" />
@@ -12,5 +12,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
