@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import "./WeatherTemperature.css";
 
 export default function WeatherTemperature(props) {
@@ -21,11 +21,11 @@ export default function WeatherTemperature(props) {
             </div>
         );
     } else {
-let fahrenheit = props.celsius * 1.8 + 32;
+let fahrenheit =  (props.celsius * 1.8 + 32);
 
 return(
     <div className="WeatherTemperature">
-        <span className="temperature">{Math.round(props.fahrenheit)}</span>
+        <span className="temperature">{Math.round(fahrenheit)}</span>
         <span className="unit">
             <a href="/" onClick={showCelsius} className="unit-link">&deg;C</a>{" "}|&deg;F
         </span>

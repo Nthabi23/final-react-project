@@ -24,15 +24,17 @@ export default function Weather(props) {
         });
     }
 
+    function handleSubmit(event) {
+            event.preventDefault();
+            search();
+        }
+
     function search() {
         const apiKey="bd5b4461863eddaa6ced0a67989e0a";
         let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            search();
-        }
+        
 
         function handleCityChange(event) {
             setCity(event.target.value);
@@ -52,7 +54,7 @@ export default function Weather(props) {
                     </form>
                     <div>
                        {" "}
-                       <WeatherInfo dat={weatherData} /> 
+                       <WeatherInfo data={weatherData} /> 
                     </div>
                     <div className="row">
 <div className="col">
