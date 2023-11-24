@@ -1,0 +1,15 @@
+.Weather{
+    padding:15px;
+    margin:10px;
+    background:blue;
+    border:1px solid white;
+    border-radius: 6px;
+    box-shadow: 3px 5px blue;
+}
+
+.Weather .btn {
+    background: pink;
+    color:white;
+    font-weight: 500;
+    border: 1px solid white;
+}

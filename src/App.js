@@ -1,15 +1,17 @@
-import Weather from "./Weather.js";
+import Weather from "./Weather";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
 
- function App() {
+
+ export default function App() {
   return(
     <div className="App">
-      <Weather defaultCity="Pretoria" />
-      <footer>
-        <a href="">Open-source code</a> by Nthabiseng Monageng
-      </footer>
+      <div fluid="sm" className="container">
+        <Weather defaultCity="Pretoria" />
+        <footer>
+          This project was coded by {" "}
+          <a href="" target="_blank" rel="noreferrer" className="footer-link">Nthabiseng Monageng</a> and is {" "} <a href="" target="_blank" rel="noreferrer" className="footer-link">open-source</a> on Github and hosted on {" "} <a href="" target="_blank" rel="noreferrer" className="footer-link">Netlify</a> 
+        </footer>
+      </div>
     </div>
   );
 }
-export default App;

@@ -1,0 +1,18 @@
+.WeatherTemperature .unit-link {
+    text-decoration: none;
+    color: red;
+}
+
+.WeatherTemperature .temperature {
+    font-size:50px;
+    font-weight:400;
+    line-height:34px;
+    padding: 0;
+}
+
+.WeatherTemperature .unit {
+    font-size: 16px;
+    font-weight: 400;
+    position:relative;
+    top: -25px;
+}

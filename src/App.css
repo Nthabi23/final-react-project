@@ -1,8 +1,16 @@
 .App {
-  text-align: center;
-  font-family:'Courier New', Courier, monospace;
-  color:brown;
+  max-width:700px;
+  margin: 40px auto;
 }
- a{
+
+.App footer {
+  color:brown;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.App .footer-link {
   text-decoration: none;
- }
+  color: brown;
+}
