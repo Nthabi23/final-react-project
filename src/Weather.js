@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {FidgetSpinner} from "react-loader-spinner";
+import React, { useState } from "react";
+import { FidgetSpinner } from "react-loader-spinner";
 
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -7,8 +7,8 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
-    const [weatherData, setWeatherData] =useState({ready: false});
-    const [city, setCity] =useState(props.defaultCity);
+    const [weatherData, setWeatherData] = useState({ ready: false });
+    const [city, setCity] = useState(props.defaultCity);
 
     function handleResponse(response) {
         setWeatherData({
@@ -25,58 +25,57 @@ export default function Weather(props) {
     }
 
     function handleSubmit(event) {
-            event.preventDefault();
-            search();
-        }
+        event.preventDefault();
+        search();
+    }
 
     function search() {
-        const apiKey="bd5b4461863eddaa6ced0a67989e0a";
-        let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        const apiKey = "fbef01f4et1b02o0d25c27210a43ef3f";
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
+    }
 
-        
 
-        function handleCityChange(event) {
-            setCity(event.target.value);
-        }
+    function handleCityChange(event) {
+        setCity(event.target.value);
+    }
 
-        if (weatherData.ready) {
-            return(
-                <div className="Weather">
-                    <form onSubmit={handleSubmit}>
-                        <div className="col-sm-8">
-                            <input type="search" placeholder="Enter a city..."
+    if (weatherData.ready) {
+        return (
+            <div className="Weather">
+                <form onSubmit={handleSubmit}>
+                    <div className="col-sm-8">
+                        <input type="search" placeholder="Enter a city..."
                             className="for-control shadow" autoFocus="on" onChange={handleCityChange} />
-                        </div>
-                        <div className="col-sm-4">
-                            <input type="submit" value="Search" className="btn btn-info-lg shadow" />
-                        </div>
-                    </form>
-                    <div>
-                       {" "}
-                       <WeatherInfo data={weatherData} /> 
                     </div>
-                    <div className="row">
-<div className="col">
-    <WeatherForecastDay lat={weatherData.lat} lon={weatherData.lon} />
-</div>
+                    <div className="col-sm-4">
+                        <input type="submit" value="Search" className="btn btn-info-lg shadow" />
+                    </div>
+                </form>
+                <div>
+                    {" "}
+                    <WeatherInfo data={weatherData} />
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <WeatherForecastDay lat={weatherData.lat} lon={weatherData.lon} />
                     </div>
                 </div>
-            ); 
-            }else {
-                search();
-                return(
-                    <FidgetSpinner
-                    visible={true}
-                    height="80"
-                    width="80"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
+            </div>
+        );
+    } else {
+        search();
+        return (
+            <FidgetSpinner
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
                 wrapperClass="dna-wrapper"
                 ballColors="red"
                 backgroundColor="white"
-                />
-                );
-        }
+            />
+        );
     }
 }

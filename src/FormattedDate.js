@@ -8,7 +8,7 @@ export default function FormattedDate(props){
     let  weekDate= props.date.getDate();
     let month= months[props.date.getMonth()];
     let day = days[props.date.getDay()];
-    let hours =props.dates.getHours();
+    let hours =props.date.getHours();
     let minutes = props.date.getMinutes();
     if (hours < 10) {
         hours =`0${hours}`;
