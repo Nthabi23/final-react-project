@@ -1,11 +1,7 @@
-.Weather{
-    font-family:Arial, Helvetica, sans-serif;
-    background:rgba (255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid;
-    border-radius: 10px;
-    padding:20px;
-    color:rgb(135, 135, 135);
+.Weather {
+    background-image: url(1701075207155.png);
+        background-size: cover;
+        background-repeat: no-repeat;
 }
 
 .Weather form{
