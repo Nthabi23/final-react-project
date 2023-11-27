@@ -1,6 +1,11 @@
 .App {
   max-width:700px;
   margin: 40px auto;
+  background: rgba (255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .App footer {
