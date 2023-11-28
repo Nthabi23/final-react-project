@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./WeatherDay.css";
 export default function WeatherDay(props) {
     function maxT(){
         let temperature = Math.round(props.maxTemp);

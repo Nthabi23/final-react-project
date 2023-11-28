@@ -1,24 +1,21 @@
 .App {
   max-width:700px;
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid;
-    border-radius: 10px;
-    padding: 20px;
+  background-image: url("cloud.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+ border: 1px solid grey;
+ border-radius: 16px;
 }
 
 .App footer {
-  color:brown;
+  color:rgb(255, 187, 0);
   font-size: 12px;
   line-height: 18px;
   text-align: center;
 }
 
 .App .footer-link {
-  text-decoration: none;
-  color: brown;
-}
-.container {
-  background: pink;
+  text-decoration: underline;
+  color: rgb(241, 242, 247);
 }

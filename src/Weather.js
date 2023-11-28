@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FidgetSpinner } from "react-loader-spinner";
 
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -41,41 +40,20 @@ export default function Weather(props) {
     }
 
     if (weatherData.ready) {
-        return (
-            <div className="Weather">
-                <form onSubmit={handleSubmit}>
-                    <div className="col-sm-8">
-                        <input type="search" placeholder="Enter a city..."
-                            className="for-control shadow" autoFocus="on" onChange={handleCityChange} />
-                    </div>
-                    <div className="col-sm-4">
-                        <input type="submit" value="Search" className="btn btn-info-lg shadow" />
-                    </div>
-                </form>
-                <div>
-                    {" "}
+        return(
+            <div className="container">
+                <div className="my-5" id="weather-box">
+                    <form className="pt-3" id="search-form" onSubmit={handleSubmit}>
+                        <input type="search" placeholder="Enter a city.." className="enterCity" id="search-input" onChange={handleCityChange} />
+                        <input type="submit" value="Search" id="city-input" onChange={search} />
+                    </form>
                     <WeatherInfo data={weatherData} />
-                </div>
-                <div className="row">
-                    <div className="col">
-                        <WeatherForecastDay lat={weatherData.lat} lon={weatherData.lon} />
-                    </div>
+                    <WeatherForecastDay lat={weatherData.lat} lon={weatherData.lon} />
                 </div>
             </div>
         );
     } else {
         search();
-        return (
-            <FidgetSpinner
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="dna-loading"
-                wrapperStyle={{}}
-                wrapperClass="dna-wrapper"
-                ballColors="red"
-                backgroundColor="white"
-            />
-        );
+        return "Loading...";
     }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import "./WeatherInfo.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -12,7 +13,7 @@ export default function WeatherInfo(props) {
                 <Col>
                 <h1>{props.data.city}</h1>
                 <ul>
-                    <li className="text-capitalize">{props.data.description}</li>
+                    <li className="feeling">{props.data.description}</li>
                 </ul>
                 </Col>
                 <Col>
@@ -40,7 +41,7 @@ export default function WeatherInfo(props) {
 <Col className="col-sm-6">
 <ul>
     <li>
-        Humidity:
+        Humidity: {" "}
         {props.data.humidity}%
     </li>
     <li>Wind: {Math.round(props.data.wind * 3.6)} km/h</li>
