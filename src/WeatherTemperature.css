@@ -4,15 +4,12 @@
 }
 
 .unit  {
-    font-size:35px;
+    font-size:30px;
     font-weight:400;
     line-height:34px;
     
-    padding: 0;
-    
 }
 .temperature {
-    font-size:35px;
-    
+    font-size:30px;
 }
 
