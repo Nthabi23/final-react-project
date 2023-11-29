@@ -1,7 +1,7 @@
 .App {
   max-width:700px;
   margin: 40px auto;
-  background-image: url("cloud.jpg");
+  background-color:rgb(85, 174, 252);
     background-size: cover;
     background-repeat: no-repeat;
  border: 1px solid grey;
